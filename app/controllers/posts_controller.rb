@@ -12,6 +12,6 @@ class PostsController < ApplicationController
 		new_post = Post.create(title: params["title"],
 								content: params["content"])
 
-		redirect_to "/"
+		redirect_to :root
 	end
 end
