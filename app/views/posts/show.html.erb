@@ -9,3 +9,18 @@
 		<%= label_tag("Content: ") %>
 		<%= post.content %>
 </div>
+
+
+<!-- alternate show method from example in class
+
+<div class="post">
+	<h3 class="post-title"><%= link_to_unless_current(@post.title, post_path(@post)) %></h3>
+	<h4 class="post-date">Written on <%= @post.date %></h4>
+	<div class="post-body">
+		<% @post.content %>
+	</div>
+</div>
+
+<%= link_to("Homepage"), :root) %>
+
+-->

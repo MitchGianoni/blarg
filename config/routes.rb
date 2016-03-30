@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   # get "/" to "posts#index"
   root to: "posts#index"
+  
   get "admin/posts/new", to: "posts#new", as: "posts_new"
   post "posts", to: "posts#create"
   

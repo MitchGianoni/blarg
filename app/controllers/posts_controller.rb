@@ -29,6 +29,9 @@ class PostsController < ApplicationController
 	def show
 		post = Post.find(params[:id])
 		render :show, locals: { post: post }
+		#more common to see instance variables than locals in
+		#controller methods
+		#totally legal to do @post = Post.find(params["id"])
 	end
 
 end
