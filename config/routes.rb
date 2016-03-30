@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get "posts/show/:id", to: "posts#show", as: "posts_show"
 
+  post "post/:id/comments", to: "comments#create", as: "post_comments"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
