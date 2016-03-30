@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 	def index
-		posts = Post.all
-		render :index, locals: { posts: posts }
+		@posts = Post.page(params[:page]).per(5)
 	end
 
 	def new
@@ -20,15 +19,17 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		this_post = Post.find(params[:id])
-		this_post.update( title: params["title"], content: params["content"])
+		#this_post = Post.find(params[:id])
+		#this_post.update( title: params["title"], content: params["content"])
 
-		redirect_to :root
+		#redirect_to :root
+		post = Post.find(params["id"])
+		post.update(title: params["title"], content: params["content"])
 	end
 
 	def show
-		post = Post.find(params[:id])
-		render :show, locals: { post: post }
+		@post = Post.find(params[:id])
+		render :show #locals: { post: @post }
 		#more common to see instance variables than locals in
 		#controller methods
 		#totally legal to do @post = Post.find(params["id"])

@@ -3,14 +3,15 @@
 <h1> ALL OF THE BLOG POSTINGS </h1>
 
 <ul class="posts">
-	<% posts.each do |post| %>
+	<% @posts.each do |post| %>
 		<li class="blog-post">Title: <%= post.title %></li>
 		<li class="content-section">&nbsp &nbsp &nbsp &nbsp Content: 
 		<%= post.content %> 
-		<%= link_to("Edit Post", posts_edit_path(post.id))%>
-		<%= link_to("Show Post", posts_show_path(post.id))%>
+		<%= link_to("Edit Post", posts_edit_path(post))%>
+		<%= link_to("Show Post", posts_show_path(post))%>
 	<% end %>
 </ul>
 
+<%= paginate @posts %>
 
 <!-- Alternate example from class 
