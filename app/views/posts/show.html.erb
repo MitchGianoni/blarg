@@ -8,6 +8,22 @@
 <div class="post-field">
 		<%= label_tag("Content: ") %>
 		<%= @post.content %>
+		<br/>
+		<br/>
+		<br/>
 </div>
 
+<%= form_tag(post_comments_path(@post.id)) do %>
+	<div class="comment-field">
+		<%= label_tag("Comment") %>
+		<%= text_area_tag("body", nil, cols: 40, rows: 8) %>
+		<br/>
+	</div>
 
+	<%= button_tag("Create Comment") %>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+	<div class ="post-comment" %>
+	</div>
+<% end %>
